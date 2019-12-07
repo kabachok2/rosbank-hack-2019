@@ -27,7 +27,6 @@ function AnimatedRouter() {
       <TransitionGroup>
         <CSSTransition
           key={location.key}
-          exit={false}
           timeout={{ enter: 300, exit: 300 }}
           classNames={"fade"}
         >

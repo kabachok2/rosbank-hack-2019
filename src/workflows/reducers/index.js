@@ -1,9 +1,9 @@
 import { createStore, applyMiddleware, combineReducers } from "redux";
 import createSagaMiddleware from "redux-saga";
 import { composeWithDevTools } from "redux-devtools-extension";
-import agentReducer from "./agent";
+import agent from "./agent";
 
-const rootReducer = combineReducers({ agentReducer });
+const rootReducer = combineReducers({ agent });
 
 export default function createReduxStore() {
   const sagaMiddleware = createSagaMiddleware();

@@ -1,10 +1,12 @@
 import React from "react";
+import { Provider } from "react-redux";
+
 import "./App.css";
-import Router from "../Router";
 
 import rootSaga from "../../workflows/sagas";
 import createReduxStore from "../../workflows/reducers/index";
-import { Provider } from "react-redux";
+
+import Router from "../Router";
 
 const store = createReduxStore();
 store.runSaga(rootSaga);

@@ -10,8 +10,6 @@ import ResultForm from "../../components/ResultForm";
  * Страница с результатами запроса
  */
 function ResultPage({ data }) {
-  console.log(data);
-
   return (
     <Grid
       container
@@ -31,7 +29,7 @@ function ResultPage({ data }) {
 const mapDispatchToProps = dispatch => ({});
 
 const mapStateToProps = (state, ownProps) => ({
-  data: state.result
+  data: state.agent.result
 });
 
 ResultPage.propTypes = {

@@ -2,13 +2,14 @@ import types from "./types";
 
 /* ------------------------------------------------ */
 
-const sendAgentData = data => ({
+const sendAgentData = (data, history) => ({
   type: types.SEND_AGENT_DATA,
-  payload: data
+  payload: { data, history }
 });
 
-const sendAgentDataSuccess = () => ({
-  type: types.SEND_AGENT_DATA_SUCCESS
+const sendAgentDataSuccess = data => ({
+  type: types.SEND_AGENT_DATA_SUCCESS,
+  payload: data
 });
 
 const sendAgentDataFailed = response => ({

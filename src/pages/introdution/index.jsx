@@ -2,17 +2,22 @@ import React from "react";
 
 import { connect } from "react-redux";
 
-import { Grid, Box } from "@material-ui/core";
+import { Grid } from "@material-ui/core";
 
 import agentActions from "../../workflows/actions/agent";
 import IntrodutionForm from "../../components/IntrodutionForm";
 
 import PropTypes from "prop-types";
+import { withRouter } from "react-router-dom";
 
 /**
  * Страница с формой для ввода данных
  */
-function IntrodutionPage({ sendAgentData, isRequestLoading }) {
+function IntrodutionPage({ sendAgentData, isRequestLoading, history }) {
+  const onButtonClick = data => {
+    sendAgentData(data, history);
+  };
+
   return (
     <Grid
       container
@@ -24,7 +29,7 @@ function IntrodutionPage({ sendAgentData, isRequestLoading }) {
     >
       <Grid item>
         <IntrodutionForm
-          onButtonClick={sendAgentData}
+          onButtonClick={onButtonClick}
           isLoading={isRequestLoading}
         ></IntrodutionForm>
       </Grid>
@@ -33,7 +38,8 @@ function IntrodutionPage({ sendAgentData, isRequestLoading }) {
 }
 
 const mapDispatchToProps = dispatch => ({
-  sendAgentData: data => dispatch(agentActions.sendAgentData(data))
+  sendAgentData: (data, history) =>
+    dispatch(agentActions.sendAgentData(data, history))
 });
 
 const mapStateToProps = (state, ownProps) => ({
@@ -45,4 +51,6 @@ IntrodutionForm.propTypes = {
   isRequestLoading: PropTypes.bool
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(IntrodutionPage);
+export default withRouter(
+  connect(mapStateToProps, mapDispatchToProps)(IntrodutionPage)
+);

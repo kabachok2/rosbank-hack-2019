@@ -24,7 +24,7 @@ function IntrodutionForm({ onButtonClick, isLoading }) {
   const [state, setState] = useState({
     agentCode: "",
     phoneNumber: "",
-    innNumber: "",
+    innNumber: "7707083893",
     comment: ""
   });
 
