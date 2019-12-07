@@ -60,7 +60,7 @@ function IntrodutionForm({ onButtonClick, isLoading }) {
             label="Код агента"
             variant="outlined"
             required
-            onChange={e => setFieldValue("code", e.target.value)}
+            onChange={e => setFieldValue("agentCode", e.target.value)}
           />
           <StyledInput
             label="Номер телефона"
@@ -72,7 +72,7 @@ function IntrodutionForm({ onButtonClick, isLoading }) {
             label="Номер ИНН"
             variant="outlined"
             required
-            onChange={e => setFieldValue("inn", e.target.value)}
+            onChange={e => setFieldValue("innNumber", e.target.value)}
           />
           <StyledInput
             label="Комментарий"
