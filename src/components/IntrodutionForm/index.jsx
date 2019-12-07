@@ -32,7 +32,6 @@ function IntrodutionForm({ onButtonClick, isLoading }) {
     setState({ ...state, [fieldName]: value });
 
   const onSendAgentDataHandler = () => {
-    debugger;
     validate() && onButtonClick(state);
   };
 
