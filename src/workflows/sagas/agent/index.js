@@ -5,10 +5,10 @@ import agentActionsTypes from "../../actions/agent/types";
 
 function* sendAgentDataHandler(action) {
   try {
-    yield call(() => agentApi.sendAgentData(action.payload));
-    yield put(agentActions.sendAgentDataSuccess());
+    const response = yield call(() => agentApi.sendAgentData(action.payload));
+    yield put(agentActions.sendAgentDataSuccess(response));
 
-    window.location = "/loading";
+    window.location = "/result";
   } catch (e) {
     console.log(e);
     yield put(agentActions.sendAgentDataFailed(e));

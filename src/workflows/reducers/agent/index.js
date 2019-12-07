@@ -1,7 +1,8 @@
 import agentActions from "../../actions/agent/types";
 
 const initialState = {
-  loading: false
+  loading: false,
+  result: null
 };
 
 const institutions = (state = initialState, action) => {
@@ -15,7 +16,8 @@ const institutions = (state = initialState, action) => {
     [agentActions.SEND_AGENT_DATA_SUCCESS]: () => {
       return {
         ...state,
-        loading: false
+        loading: false,
+        result: action.payload
       };
     },
     [agentActions.SEND_AGENT_DATA_FAILED]: () => {
