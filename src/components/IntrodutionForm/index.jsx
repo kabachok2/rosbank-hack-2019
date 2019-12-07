@@ -22,9 +22,9 @@ const StyledInput = withStyles({
 function IntrodutionForm({ onButtonClick, isLoading }) {
   const classes = useStyles();
   const [state, setState] = useState({
-    code: "",
+    agentCode: "",
     phoneNumber: "",
-    inn: "",
+    innNumber: "",
     comment: ""
   });
 
