@@ -6,7 +6,8 @@ import agentActionsTypes from "../../actions/agent/types";
 function* sendAgentDataHandler(action) {
   try {
     const response = yield call(() => agentApi.sendAgentData(action.payload));
-    yield put(agentActions.sendAgentDataSuccess(response));
+    console.log("Результат запроса: ", response, response.data);
+    yield put(agentActions.sendAgentDataSuccess(response.data));
 
     window.location = "/result";
   } catch (e) {
