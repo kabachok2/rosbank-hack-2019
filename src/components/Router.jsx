@@ -3,7 +3,7 @@ import { Route, Switch, useLocation, BrowserRouter } from "react-router-dom";
 
 import { TransitionGroup, CSSTransition } from "react-transition-group";
 
-const FormPage = React.lazy(() => import("../pages/form/"));
+const FormPage = React.lazy(() => import("../pages/introdution/"));
 const ResultPage = React.lazy(() => import("../pages/result/"));
 const StepsPage = React.lazy(() => import("../pages/steps/"));
 
@@ -34,7 +34,7 @@ function AnimatedRouter() {
           <Switch location={location}>
             <Route exact path="/" component={FormPage} />
             <Route exact path="/result" component={ResultPage} />
-            <Route exact path="/steps" component={StepsPage} />
+            <Route exact path="/loading" component={StepsPage} />
 
             <Route component={() => <div>Страница не найдена</div>} />
           </Switch>

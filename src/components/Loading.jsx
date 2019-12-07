@@ -2,7 +2,7 @@ import React from "react";
 import Fade from "@material-ui/core/Fade";
 import CircularProgress from "@material-ui/core/CircularProgress";
 
-function Loading({ loading }) {
+function Loading({ loading, color, size, className }) {
   return (
     <Fade
       in={loading}
@@ -11,7 +11,7 @@ function Loading({ loading }) {
       }}
       unmountOnExit
     >
-      <CircularProgress />
+      <CircularProgress className={className} color={color} size={size} />
     </Fade>
   );
 }
